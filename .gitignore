@@ -1,0 +1,75 @@
+# ============================================
+#  Sorting Algorithms Project - .gitignore
+# ============================================
+
+# --- Build directories ---
+/build/
+/build-*/
+out/
+bin/
+obj/
+lib/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+Testing/
+
+# --- Binaries ---
+*.exe
+*.out
+*.obj
+*.o
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# --- IDE / Editor files ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.log
+*.user
+*.workspace
+
+# --- macOS system files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# --- OS / Editor backups ---
+*~
+# Files ending with # (Emacs)
+\#*\#
+# JetBrains / CLion caches
+cmake-build-*/
+
+# --- Python helper scripts (if you add plotting later) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints
+
+# --- Miscellaneous ---
+tags
+*.csv
+*.dat
+*.json
+*.zip
+
+# --- CLion / CMake extra metadata ---
+CMakeScripts/
+CMakeTmp/
+CMakeFiles/
+CTestTestfile.cmake
