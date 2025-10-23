@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <string>
 
+using std::vector;
+
 class SortingAlgs
 {
 public:
@@ -10,15 +12,17 @@ public:
     enum class Algorithm
     {
         StdSort,
-        Insertion
+        Insertion,
+        Merge
     };
 
     // landing funciton
     // --> dispatches based on Algorithm
-    static void sort(std::vector<int> &a, Algorithm algo);
+    static void sort(vector<int> &a, Algorithm algo);
+    static void merge_sort_inplace_(vector<int> &a);
 
     // implementations
-    static void insertion_sort_(std::vector<int> &a);
+    static void insertion_sort_(vector<int> &a);
 
     // helpers
     SortingAlgs() = default;
@@ -28,4 +32,7 @@ public:
 
 private:
     std::size_t data_len_ = 0;
+
+    static vector<int> merge_sort_(const vector<int> &a);
+    static vector<int> merge_(const vector<int> &left, const vector<int> &right);
 };

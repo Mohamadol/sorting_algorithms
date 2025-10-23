@@ -72,7 +72,7 @@ static void print_usage()
                  "(default: random)\n"
                  "  --trials <T>        Number of trials to average timing results "
                  "(default: 3)\n"
-                 "  --algo <A>          Sorting algorithm: std | insertion "
+                 "  --algo <A>          Sorting algorithm: std | insertion | merge "
                  "(default: std)\n"
                  "  -h, --help          Show this help message and exit\n\n"
                  "Examples:\n"
@@ -217,4 +217,26 @@ static double time_one(SortingAlgs::Algorithm algo, const std::vector<int> &base
         throw std::runtime_error("Result not sorted!");
     std::chrono::duration<double, std::milli> ms = t1 - t0;
     return ms.count();
+}
+
+std::string algo_name(SortingAlgs::Algorithm algo)
+{
+    std::string name = "";
+
+    switch (algo)
+    {
+    case SortingAlgs::Algorithm::Insertion:
+        name = "insertion";
+        break;
+    case SortingAlgs::Algorithm::Merge:
+        name = "merge";
+        break;
+    case SortingAlgs::Algorithm::StdSort:
+        name = "std::sort";
+        break;
+    default:
+        name = "unsupported";
+    }
+
+    return name;
 }

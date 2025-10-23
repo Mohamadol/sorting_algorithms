@@ -18,7 +18,7 @@ int main(int argc, char **argv)
                                                                          : opt.pattern == Pattern::NearlySorted ? "nearly"
                                                                                                                 : "dups")
               << " trials=" << opt.trials
-              << " algo=" << (opt.algo == SortingAlgs::Algorithm::StdSort ? "std" : "insertion")
+              << " algo=" << algo_name(opt.algo)
               << "\n";
 
     // -> init test data
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
               << std::setw(12) << "worst(ms)" << "\n";
 
     std::cout << std::left << std::setw(20)
-              << (opt.algo == SortingAlgs::Algorithm::StdSort ? "std::sort" : "insertion_sort")
+              << algo_name(opt.algo)
               << std::right << std::setw(12) << std::fixed << std::setprecision(3) << best
               << std::setw(12) << avg
               << std::setw(12) << worst << "\n";
